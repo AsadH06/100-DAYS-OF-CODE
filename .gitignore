@@ -1,0 +1,9 @@
+.idea/
+qodana.yaml
+__pycache__/
+*.pyc
+.idea/
+__pycache__/
+*.pyc
+qodana.yaml
+*.DS_Store
