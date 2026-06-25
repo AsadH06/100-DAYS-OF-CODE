@@ -29,6 +29,7 @@ print(data[data.day == "Monday"])  # filtering — returns all rows where day ==
 
 # find the row with the highest temperature
 highest_temp = data['temp'].max()                    # get the max value first
+print(highest_temp)
 highest_temp_data = data[data.temp == highest_temp]  # filter rows where temp equals that max
 print(highest_temp_data.condition)
 
@@ -37,6 +38,7 @@ print(highest_temp_data.condition)
 # DO NOT use highest_temp_data.temp[0] — [0] refers to index LABEL not position
 # after filtering, original index labels are preserved so [0] may not exist
 highest_temp_c = highest_temp_data.iloc[0]['temp']
+print(highest_temp_c)
 c_to_f = (highest_temp_c * 9/5) + 32
 print(c_to_f)
 

@@ -1,3 +1,21 @@
+# ─────────────────────────────────────────────────────────────
+#  data.py — Raw question data
+#
+#  This file is just a data store — no classes, no logic.
+#  question_data is a list of dicts, where each dict has two keys:
+#    "text"   → the question string
+#    "answer" → "True" or "False" (as strings, not booleans)
+#
+#  Why strings and not Python booleans (True/False)?
+#  Because we're comparing against user input from input(), which
+#  always returns a string. Keeping answers as strings avoids
+#  needing to convert types during comparison.
+#
+#  OOP note — Separation of concerns:
+#  Keeping data in its own file means you can swap out the question
+#  set entirely (e.g. load from an API or a JSON file) without
+#  touching any of the logic in QuizBrain or Question.
+# ─────────────────────────────────────────────────────────────
 question_data = [
     {"text": "A slug's blood is green.", "answer": "True"},
     {"text": "The loudest animal is the African Elephant.", "answer": "False"},

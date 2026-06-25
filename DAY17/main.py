@@ -18,7 +18,7 @@ class User:
         # initialize attributes
 
 user1 = User(1, "asxpd")
-user2 = User(2, "z1ya.s")
+user2 = User(2, "asxdy")
 
 user2.follow(user1)
 

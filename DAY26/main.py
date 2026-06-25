@@ -55,6 +55,7 @@ Try to use List Comprehension instead of a Loop.
 """
 with open('file1.txt') as file1:
     num1 = file1.readlines()
+    print(num1)
     stripped_num1 = [int(num.strip()) for num in num1]
 
 with open('file2.txt') as file2:
@@ -96,21 +97,36 @@ print(weather_f)
 
 
 """COMPREHENSION USING PANDAS"""
+
 student_dict = {
     "student": ["Angela", "James", "Lily"],
     "score" : [56, 76, 98]
 }
+
 import pandas as pd
 
+# pd.DataFrame(dict) — converts a dictionary into a DataFrame
+# keys become column names, values (lists) become column data
 student_df = pd.DataFrame(student_dict)
 print(student_df)
+# output:
+#   student  score
+# 0  Angela     56
+# 1   James     76
+# 2    Lily     98
 
-for key,value in student_df.items():
-    print(key)
-    print(value)
+# .items() — iterates over columns, not rows
+# each iteration gives: (column_name, Series of that column's values)
+# same as dict.items() but for DataFrames
+for key, value in student_df.items():
+    print(key)    # prints column name: "student", then "score"
+    print(value)  # prints the full Series for that column including index labels
 
-for (index,row) in student_df.iterrows():
-    # print(index)
-    # print(row)
-    # print(row.student)
-    print(row.score)
+# .iterrows() — iterates over rows
+# each iteration gives: (index_label, Series of that row's values)
+# the Series contains all column values for that row, accessible by column name
+for (index, row) in student_df.iterrows():
+    # print(index)     # prints row number: 0, 1, 2
+    # print(row)       # prints entire row as a Series with column names as index
+    # print(row.student) # dot notation to access specific column value in that row
+    print(row.score)   # prints score for each row: 56, 76, 98

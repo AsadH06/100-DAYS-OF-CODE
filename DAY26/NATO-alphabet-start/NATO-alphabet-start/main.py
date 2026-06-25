@@ -10,13 +10,14 @@ for (key, value) in student_dict.items():
 
 import pandas as pd
 student_data_frame = pd.DataFrame(student_dict)
+print(student_data_frame)
 
 #Loop through rows of a data frame
 for (index, row) in student_data_frame.iterrows():
+    print(index, row.student, row.score)
     #Access index and row
     #Access row.student or row.score
     pass
-
 # Keyword Method with iterrows()
 # {new_key:new_value for (index, row) in df.iterrows()}
 
